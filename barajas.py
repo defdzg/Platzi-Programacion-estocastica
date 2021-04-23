@@ -22,20 +22,21 @@ def obtener_mano(barajas, tamano_mano):
     # cinco cartas del mismo palo (o más), no necesariamente consecutivas.   
     
 def corrida(manos):
+    valores = []
     for mano in manos:
-        valores = []
         for carta in mano:
             valores.append(carta[1])
             
     counter = dict(collections.Counter(valores))
     
     cinco = 0
-    
+
     for val in counter.values():
         if val == 5:
             cinco += 1
             break
-        
+    
+    print (counter.values())
     return(cinco)
     
 def main(tamano_mano, intentos):
